@@ -1,0 +1,20 @@
+.box {
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    background-color: blue;
+}
+
+.border {
+    background-color: red;
+    border-width: 1px;
+}
+
+.apple{
+    background-image: url(~/images/apple.jpg);
+}
+
+label.sel:highlighted {
+    background-color: red;
+}
+

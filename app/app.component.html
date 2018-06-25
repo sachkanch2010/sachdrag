@@ -1,0 +1,29 @@
+<ActionBar title="Drag and Drop"></ActionBar>
+<!-- <GridLayout class="box" columns="200, 200" rows="200, 200" width="400" height="400" backgroundColor="white">
+    <Image class="box" row="0" col="0" #dragImage width="190" height="190" (pan)="onPan($event)" src="~/images/apple.jpg"></Image>
+    <Image class="box" row="1" col="1" #dragImage1 width="190" height="190" (pan)="onPan($event)" src="~/images/apple.jpg"></Image>
+</GridLayout> -->
+
+<StackLayout backgroundColor="lightgray">
+    <GridLayout width="400" height="100" backgroundColor="lightgray" >
+        <Label text="" row="0" col="0" backgroundColor="gray"></Label>
+    </GridLayout>
+
+    <GridLayout #container class="box" columns="50, 50, 50, 50, 50, 50, 50, 50" rows="50, 50, 50, 50, 50, 50, 50, 50" width="401" height="401">
+        <template *ngFor="let col of blocks">
+            <template *ngFor="let row of blocks">
+                    <Label class="box sel" text="" [col]="col" [row]="row" (touch)="onTouch($event, row, col)"></Label>
+                    <!-- <Image class="box" [col]="col" [row]="row" src="~/images/apple.jpg" *ngIf=""></Image> -->
+            </template>
+        </template>
+        <Label class="border" text="" [col]="colN" [row]="rowN" *ngIf="selected"></Label>
+        <Image #dragImage (pan)="onPan($event)" class="box" row="0" col="0" src="~/images/apple.jpg" width="50" height="50"></Image>
+        <!-- <Image class="box" src="~/images/apple.jpg" ></Image> -->
+    </GridLayout>
+
+    <GridLayout width="400" height="100" backgroundColor="lightgray" >
+        <Image (pan)="onPan($event)" class="box" row="0" col="0" src="~/images/apple.jpg" width="50" height="50"></Image>
+    </GridLayout>
+</StackLayout>
+
+
